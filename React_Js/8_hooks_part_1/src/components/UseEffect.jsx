@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-export default function LifecycleDemo() {
+export default function UseEffect() {
   const [count, setCount] = useState(0);
 
   console.log("Component Rendered");
@@ -19,7 +19,6 @@ export default function LifecycleDemo() {
       console.log("❌ Component Unmounted (Cleanup Timer)");
     };
   }, []);
-}
 
   // Updating - every render
   useEffect(() => {
@@ -29,16 +28,16 @@ export default function LifecycleDemo() {
 //   // Updating - specific state change
 //   useEffect(() => {
 //     console.log("🟡 Count updated:", count);
-//   }, []);
+//   }, [count]);
 
-//   return (
-//     <div style={{ marginTop: "20px" }}>
-//       <h2>Lifecycle Component</h2>
-//       <p>Count: {count}</p>
+  return (
+    <div style={{ marginTop: "20px" }}>
+      <h2>Lifecycle Component</h2>
+      <p>Count: {count}</p>
 
-//       <button onClick={() => setCount(count + 1)}>
-//         Increase Count
-//       </button>
-//     </div>
-//   );
-// }
+      <button onClick={() => setCount(count + 1)}>
+        Increase Count
+      </button>
+    </div>
+  );
+}
