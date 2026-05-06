@@ -43,7 +43,7 @@ function AxiosCrud() {
       id: 1,
       name: "Manish Rai",
       age: 20,
-      role: "Architect",
+
     })
     .then(res => {
       console.log(" PUT response:", res.data);

@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 function UseState() {
-  const [count, setCount] = useState(0);
+  const [count, setCount] = useState("Manish");
 
   console.log("Component Rendered. Count is:", count);
 

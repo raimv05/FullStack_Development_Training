@@ -1,2 +1,1 @@
-Hello from Node.js!
-I am Manish.
+Node.js is awesome!

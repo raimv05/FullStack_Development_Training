@@ -1,42 +1,48 @@
+
 import React, { useEffect, useState } from "react";
 
-export default function UseEffect() {
+export default function UseEffectDemo() {
   const [count, setCount] = useState(0);
+  const [name, setName] = useState("Manish");
 
   console.log("Component Rendered");
 
-  // Mounting
+  // Runs ONLY once (Mounting)
   useEffect(() => {
-    console.log("👉 Component Mounted (First time)");
+    console.log("Mounted (Runs only once)");
 
-    const timer = setInterval(() => {
-      console.log("⏳ Timer running...");
-    }, 2000);
-
-    // Cleanup / Unmounting
     return () => {
-      clearInterval(timer);
-      console.log("❌ Component Unmounted (Cleanup Timer)");
+      console.log("Unmounted (Cleanup)");
     };
   }, []);
 
-  // Updating - every render
+  // Runs on EVERY render
   useEffect(() => {
-    console.log("🔄 Component Updated");
+    console.log("Runs on EVERY render");
   });
 
-//   // Updating - specific state change
-//   useEffect(() => {
-//     console.log("🟡 Count updated:", count);
-//   }, [count]);
+  // Runs ONLY when count changes
+  useEffect(() => {
+    console.log("Count changed:", count);
+  }, [count]);
+
+  // Runs ONLY when name changes
+  useEffect(() => {
+    console.log("Name changed:", name);
+  }, [name]);
 
   return (
     <div style={{ marginTop: "20px" }}>
-      <h2>Lifecycle Component</h2>
-      <p>Count: {count}</p>
+      <h2>useEffect Full Demo</h2>
 
+      <p>Count: {count}</p>
       <button onClick={() => setCount(count + 1)}>
         Increase Count
+      </button>
+
+      <p>Name: {name}</p>
+      <button onClick={() => setName(name === "Manish" ? "Rahul" : "Manish")}>
+        Change Name
       </button>
     </div>
   );

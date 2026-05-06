@@ -2,9 +2,10 @@ import { useState, useMemo } from "react";
 
 function UseMemo_1() {
   const [count, setCount] = useState(0);
-  const [items] = useState([50, 100, 200, 50]);
+  const [items] = useState([50, 300, 200, 500]);
 
   console.log("🔥 Component Rendered");
+  console.log(count)
 
   const total = useMemo(() => {
     console.log("🧮 Re-calculating TOTAL...");

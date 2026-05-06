@@ -5,11 +5,12 @@ function UseRef() {
 
   // useState (causes re-render)
   const [stateCount, setStateCount] = useState(0);
+   console.log("📌 Current stateCount:", stateCount);
 
   // useRef (does not cause re-render)
-  const refCount = useRef(0);
+  const refCount = useRef(1);
 
-  console.log("📌 Current stateCount:", stateCount);
+ 
   console.log("📌 Current refCount:", refCount.current);
 
   function increaseState() {

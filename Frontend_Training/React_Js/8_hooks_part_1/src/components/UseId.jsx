@@ -21,22 +21,54 @@
 
 // ✅ Code (WITH useId)
 
-import { useId } from "react";
 
-function UseId() {
-  
-  const id = useId();
+import { useState, useId, useEffect } from "react";
 
-  console.log("🆔 Generated ID:", id);
+function UseIdDynamic() {
+  const baseId = useId();
+  const [names, setNames] = useState([""]);
+
+  // Log only when a new field is added
+  useEffect(() => {
+    console.log(" New field added. Total fields:", names.length);
+
+    names.forEach((_, index) => {
+      console.log(`Field ${index} ID: ${baseId}-${index}`);
+    });
+  }, [names.length]); //  ONLY runs when length changes
+
+  const addField = () => {
+    setNames([...names, ""]);
+  };
+
+  const handleChange = (index, value) => {
+    const updated = [...names];
+    updated[index] = value;
+    setNames(updated);
+  };
 
   return (
     <div>
-      <h2>useId Example</h2>
+      <h2>Dynamic useId Example</h2>
 
-      <label htmlFor={id}>Name:</label>
-      <input id={id} />
+      {names.map((name, index) => {
+        const id = `${baseId}-${index}`;
+
+        return (
+          <div key={id} style={{ marginBottom: "10px" }}>
+            <label htmlFor={id}>Name {index + 1}:</label>
+            <input
+              id={id}
+              value={name}
+              onChange={(e) => handleChange(index, e.target.value)}
+            />
+          </div>
+        );
+      })}
+
+      <button onClick={addField}>Add Name</button>
     </div>
   );
 }
 
-export default UseId;
+export default UseIdDynamic;
