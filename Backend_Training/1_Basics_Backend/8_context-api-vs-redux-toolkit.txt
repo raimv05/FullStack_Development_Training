@@ -1,0 +1,108 @@
+
+Difference Between Context API and Redux Toolkit
+
+1. Context API = Office Notice Board
+
+Imagine there is a notice board in an office lobby.
+
+Whenever some information is important for everyone, like:
+- Theme (Dark/Light mode)
+- Logged-in user
+- Language settings
+
+you pin it on the notice board.
+
+Any employee can read it.
+
+But if anything changes, many employees re-check the board again.
+
+Context API is mainly used for simple global state sharing.
+
+
+Real-Life Example:
+A Theme System where Navbar, Sidebar, and Footer all need the current theme.
+
+
+--------------------------------------------------
+
+2. Redux Toolkit = Smart Warehouse Management System
+
+Instead of a notice board, imagine a professional warehouse system.
+
+Different departments handle different responsibilities:
+- User Department
+- Cart Department
+- Product Department
+- Orders Department
+
+Employees do not directly change data.
+They send requests, and the system updates data properly.
+
+Redux Toolkit is used for complex and scalable state management.
+
+
+Real-Life Example:
+An E-commerce app where:
+- Navbar cart count updates
+- Cart page updates
+- Checkout updates
+- Total price updates
+
+all automatically when a product is added.
+
+
+--------------------------------------------------
+
+Main Differences
+
+Context API:
+- Simple
+- Built into React
+- Best for small apps
+- Can cause unnecessary re-renders
+- Good for theme/auth/language settings
+
+Redux Toolkit:
+- Advanced
+- External library
+- Best for large apps
+- Optimized performance
+- Excellent for complex state & APIs
+
+
+--------------------------------------------------
+
+Simple Analogy
+
+Context API:
+Like a family WhatsApp group sharing small updates.
+
+Redux Toolkit:
+Like a professional company management system.
+
+
+--------------------------------------------------
+
+When to Use
+
+Use Context API:
+- Theme management
+- Authentication
+- Small applications
+
+Use Redux Toolkit:
+- E-commerce apps
+- Dashboards
+- Large-scale applications
+- Complex API handling
+
+
+--------------------------------------------------
+
+One-Line Difference
+
+Context API:
+“Sharing data globally.”
+
+Redux Toolkit:
+“Managing complex global application state professionally.”

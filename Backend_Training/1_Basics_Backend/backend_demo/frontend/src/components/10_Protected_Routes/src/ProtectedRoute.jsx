@@ -5,7 +5,7 @@ import { AuthContext } from "./AuthContext";
 function ProtectedRoute({ children }) {
   const { isAuth } = useContext(AuthContext);
 
-  console.log("🛡 ProtectedRoute | isAuth =", isAuth);
+  console.log("ProtectedRoute | isAuth =", isAuth);
 
   if (!isAuth) {
     console.log("🚫 Access denied → redirecting to /login");
