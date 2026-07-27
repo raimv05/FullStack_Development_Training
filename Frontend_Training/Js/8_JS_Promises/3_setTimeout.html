@@ -6,11 +6,16 @@
 <p id="demo"></p>
 
 <script>
+  function sayHello(){
+  document.getElementById("demo").innerHTML = "Hello";
+  }
+
 function myFunction() {
-  document.getElementById("demo").innerHTML = "Ye jo puchte ho tum haal mera, agar bata du tumhe apne dil ka dard , sath rahoge kya tum mere? <br> Tutti hui chizo ko hath nhi lagate kya batate nh gharwale tere;";
+  document.getElementById("demo").innerHTML = "Hello after 3 seconds";
 }
 
 // Run myFunction after 3 seconds
+sayHello();
 setTimeout(myFunction, 3000);
 </script>
 </body>

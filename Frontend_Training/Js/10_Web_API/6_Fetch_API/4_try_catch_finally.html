@@ -11,7 +11,8 @@
 📌 If the code in try is wrong → catch runs -->
 
 <!DOCTYPE html>
- <html>
+<html>
+
 <body>
   <h2>Try / Catch / Finally - Error Case</h2>
   <button onclick="testError()">Click to Test Error</button>
@@ -19,32 +20,33 @@
 
   <script>
     function testError() {
-      
+
 
       try {
-       let num = 5;
-        let total = num + 10; 
+        let nu = 5;
+        let total = num + 10;
         document.getElementById("result").innerHTML =
           "✅ Result: " + total;
       }
-      catch(error) {
+      catch (error) {
         console.log("⚠️ Inside catch block");
         console.log("Error Name:", error.name);
         console.log("Error Message:", error.message);
 
         document.getElementById("result").innerHTML =
-          "⚠️ Error caught: " + error.message +error.name;
+          "⚠️ Error caught: " + error.message + error.name;
       }
       finally {
         console.log("✅ Finally block executed!");
-      
-    }
+
+      }
 
       console.log("⛔ Function end reached");
     }
   </script>
 
 </body>
+
 </html>
 
 

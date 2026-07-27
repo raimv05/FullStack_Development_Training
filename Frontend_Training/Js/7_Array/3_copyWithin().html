@@ -4,18 +4,19 @@
 Real Life Example: Copying books to another shelf space, overwriting old ones. -->
 <!DOCTYPE html>
 <html>
+
 <body>
-<h2>CopyWithin Example</h2>
-<p id="demo"></p>
+    <h2>CopyWithin Example</h2>
+    <p id="demo"></p>
 
-<script>
-const books = ["Math", "Science", "History", "English"];
-books.copyWithin(2,1  ); 
+    <script>
+        const books = ["Math", "Science", "History", "English", "Geography", "Physics", "Chemistry"];
+        books.copyWithin(3,1);
 
- 
-//["Math", "Science", "History", "Math"]
-document.getElementById("demo").innerHTML = books;
-</script>
+
+        //["Math", "Science", "History", "Math"]
+        document.getElementById("demo").innerHTML = books;
+    </script>
 </body>
-</html>
 
+</html>

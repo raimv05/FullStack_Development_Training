@@ -21,7 +21,7 @@ With callbacks: You can control when and how another function runs.
 Callbacks are super useful when something takes time (like waiting for a file, database, or API).
 
 🔹 Example 1: Function Sequence Without Callbacks -->
-<!-- 
+
  <!DOCTYPE html>
 <html>
 <body>
@@ -58,9 +58,26 @@ function sayGoodbye() {
 
 sayHello(sayGoodbye);  // Goodbye runs only after Hello completes
 
+function add (callback) {
+  let a = 5;
+  let b = 10;
+  let sum = a + b;
+  console.log("Sum:", sum);
+  callback(); // run when addition is finished
+}
+
+function multiply() {
+  let a = 5;
+  let b = 10;
+  let product = a * b;
+  console.log("Product:", product);
+}
+
+add(multiply);  // multiply runs only after addition completes
+
 </script>
 </body>
-</html>  -->
+</html> 
 
 
 

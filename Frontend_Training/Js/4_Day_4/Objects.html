@@ -11,17 +11,19 @@
 //👉 An object is like a box where you can store related information (properties) and actions (methods).
 
 const car = {
-  name: "Fiat",
-  model: "500",
+  name: "BMW",
+  model: 500,
   color: "white",
   start: function() { console.log("Car started"); },
   drive: function() { console.log("Car is driving"); }
 };
 
-console.log(car.name);   // Fiat
+console.log(car.name);   // BMW
+console.log(car.model);
 car.start();             // Car started
 car.drive();
 car ["drive"]();             // Car is driving
+console.log(car.color);  // white
 // 🛠️ Real-life analogy:
 
 // Properties = car’s details (color, weight).
@@ -31,7 +33,10 @@ car ["drive"]();             // Car is driving
 // 2️⃣ Ways to Create Objects
 // 📌 Object Literal (easiest & most common)
 
-const person_1 = { firstName: "John", lastName: "Doe", age: 30 };
+const person_1 = { 
+  firstName: "John", 
+  lastName: "Doe", age: 30 
+};
 
 //📌 Empty Object + Adding Properties Later
 
@@ -77,12 +82,45 @@ function Person(first, last, age, eye) {
 
 const father = new Person("John", "Doe", 50, "blue");
 const mother = new Person("Sally", "Rally", 48, "green");
-console.log(father.firstName,father.age); // John
-console.log(mother.age); // 48
-console.log(mother.firstName); // Sally
-console.log(mother.lastName); // Rally
-console.log(mother.eyeColor); // green
-console.log(father.age); // 50
+const daughter = new Person("Jane", "Doe", 20, "brown");
+const son = new Person("Mark", "Doe", 18, "blue");
+
+ // father object  = {
+  
+//   firstName: "John",
+//   lastName: "Doe",
+//   age: 50,
+//   eyeColor: "blue"
+//  }
+
+// mother object = {
+  
+//   firstName: "Sally",
+//   lastName: "Rally",
+//   age: 48,
+//   eyeColor: "green"
+//  }
+
+//  daughter object = {
+
+//     firstName: "Jane",
+//     lastName: "Doe",
+//     age: 20,
+//     eyeColor: "brown"
+//   }
+
+//  son object = {
+//  firstName: "Mark",
+//     lastName: "Doe",
+//     age: 18,
+//     eyeColor: "blue"
+//   }
+
+console.log(father.firstName,father.age,father.lastName); // John
+console.log(mother.age,mother.firstName,mother.lastName); // 48 Sally Rally
+console.log(daughter.firstName,daughter.age,daughter.lastName); // Jane 20 Doe
+console.log(son.firstName,son.age,son.lastName); // Mark 18 Doe
+
 
 // 🛠️ Real-life analogy:
 // Think of a blueprint for a house.

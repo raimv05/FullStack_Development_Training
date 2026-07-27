@@ -44,10 +44,12 @@ Create a file named data.txt and write: -->
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>📦 Fetch API Example - Using .then()</title>
 </head>
+
 <body>
   <h2>📡 Fetch API - Get Data from a File (Using .then)</h2>
   <button onclick="getData()">Get File Data</button>
@@ -62,7 +64,7 @@ Create a file named data.txt and write: -->
       fetch("file.txt")
         // Step 2: Convert the response to text
         .then(response => response.text())
-        
+
         // Step 3: Display the data
         .then(text => {
           output.innerHTML = "✅ Data Received:<br><br>" + text;
@@ -70,13 +72,14 @@ Create a file named data.txt and write: -->
           //console.log(response)
         })
         // // Step 4: Handle errors if any
-         .catch(error => {
+        .catch(error => {
           output.innerHTML = "❌ Error: " + error;
           console.error("Error fetching file:", error);
-         });
+        });
     }
   </script>
 </body>
+
 </html>
 
 

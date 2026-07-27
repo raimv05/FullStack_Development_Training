@@ -33,6 +33,7 @@ You get a cup of coffee (output).
 <script>
 // A simple function
 function add(a, b) {
+  
   return a + b;
 }
 
@@ -42,11 +43,11 @@ console.log(add(10, 20)); // 30
 
 // Javascript Functions Syntax
 
-function name(p1, p2, p3) {
-  // code to run
-  return result;  
-}
-console.log(name(a,b,c))
+// function name(p1, p2, p3) {
+//   // code to run
+//   return result;  
+// }
+// name(a,b,c);
 // 📌 Explanation
 
 // function keyword → tells JavaScript you are creating a function.
@@ -62,13 +63,13 @@ console.log(name(a,b,c))
 //Example :- Making Juice 🥤
 
 function makeJuice(fruit1, fruit2) {
-  return "Juice made with " + fruit1 + " and " + fruit2;
-  //`Juice made with ${fruit1} and ${fruit2}`;
+  // return "Juice made with " + fruit1 + " and " + fruit2;
+  return `<h1>Juice made with ${fruit1} and ${fruit2}</h1>`;
   
 }
 
-console.log(makeJuice("Mango", "Orange")); 
-
+document.write(makeJuice("Mango", "Orange")); 
+console.log(makeJuice("Apple", "Banana"));
 // 👉 Here:
 
 //1. function = recipe
@@ -102,18 +103,18 @@ greet();  // Function is invoked here
 
 // Like pressing a button on a remote 📺 – only works when the button is clicked.
 
-function sayHi() {
-  alert("Hi, you clicked the button!");
-}
-<button onclick="sayHi()">Click Me</button>
+// function sayHi() {
+//   alert("Hi, you clicked the button!");
+// }
+// <button onclick="sayHi()">Click Me</button>
 
 // 3. Self-Invoked (runs automatically)
 
 // Like a microwave with auto-start – it begins as soon as you close the door.
 
-(function () {
-  console.log("I run automatically!");
-})();
+// (function () {
+//   console.log("I run automatically!");
+// })();
 
 // 🔹 When to Use What in Function Invocation
 // 1. Normal Function Call (greet();)
@@ -167,7 +168,7 @@ console.log(square(4)); // 16
 // 3. If there are no parameters, you must use ():
 
 const sayHi = () => console.log(2+3);
-sayHi(); // Hello!
+sayHi(); // 5
 
 // 🔹 Local Variables in JavaScript
 
@@ -179,141 +180,141 @@ sayHi(); // Hello!
 
 // You can reuse the same variable name in different functions without conflict.
 
-function greet() {
-  let message = "Hello from inside the function!";
-  console.log(message);
-  document.write(message);
-}
+// function greet() {
+//   let message = "Hello from inside the function!";
+//   console.log(message);
+//   document.write(message);
+// }
 
-greet(); // Output: Hello from inside the function!
-console.log(message); // ❌ Error: message is not defined
+// greet(); // Output: Hello from inside the function!
+// console.log(message); // ❌ Error: message is not defined
 
-//👉 Here message is a local variable. It lives only inside greet() and cannot be used outside.
-
-
-//🔹 Multiple Functions with Same Local Variable Name
-
-function car() {
-  let color = "Red";
-  console.log("Car color: " + color);
-}
-
-function bike() {
-  let color = "Blue";
-  console.log("Bike color: " + color);
-}
-
-car();   // Car color: Red
-bike();  // Bike color: Blue
-
-//👉 Both functions use color, but they don’t interfere with each other because each color is local.
-
-// 🔹 Parameters vs. Arguments in JavaScript
-// ✅ Parameters
-
-// Parameters are like placeholders (labels) in the function definition.
-
-// They tell the function what kind of input it expects.
-
-// Think of them as empty boxes waiting to be filled.
-
-// ✅ Arguments
-
-// Arguments are the actual values you pass into the function when calling it.
-
-// They are the real things that go inside the boxes (parameters).
-
-function greet(name) {   // "name" is a parameter
-  console.log("Hello " + name);
-}
-
-greet("Alice"); // "Alice" is an argument
-greet("Bob");   // "Bob" is an argument
-
-// 👉 Here:
-
-// name → Parameter (placeholder in the function definition).
-
-// "Alice" and "Bob" → Arguments (actual values passed when function is invoked).
-
-// Example :- Pizza Order 🍕
-
-// Parameter: “topping” (in the menu recipe).
-
-// Argument: “Cheese” or “Pepperoni” (what customer actually orders).
-
-function add(x, y) {  // x and y are parameters
-  return x + y;
-}
-
-console.log(add(5, 10)); // 5 and 10 are arguments
-console.log(add(20, 30)); // 20 and 30 are arguments
-
-//🔹 JavaScript this in Functions
-// 👉 Think of this as:
-// “Who owns the function when it runs?”
-// 1. Global Scope (this = window)
-// When you use this outside any object or function → it points to the global object (window in browsers).
-
-console.log(this); // Window
-
-// Example:
-// Like shouting in a marketplace — everyone can hear (global space).
-
-//2. Inside a Function
-//By default, functions also make this the global object.
-
-function test() {
-  console.log(this);
-}
-test(); // Window
-
-// ⚠️ In strict mode, it’s undefined.
-
-// 🛠️ Real Life Example:
-// You ask a question without context → nobody knows who you’re talking to (undefined).
-
-// 3. Inside an Object Method
-
-// When a function is inside an object, this = the object itself.
-
-const car = {
-  brand: "Tesla",
-  showBrand: function() {
-    console.log(this.brand);
-  }
-};
-
-car.showBrand(); // Tesla
+// //👉 Here message is a local variable. It lives only inside greet() and cannot be used outside.
 
 
-// 🛠️ Real Life Example:
-// If you say “my house” when you’re inside your house → “my” = the house you’re in.
+// //🔹 Multiple Functions with Same Local Variable Name
 
-// 4. Inside an Event Handler
+// function car() {
+//   let color = "Red";
+//   console.log("Car color: " + color);
+// }
 
-// In events, this = the element that triggered the event.
+// function bike() {
+//   let color = "Blue";
+//   console.log("Bike color: " + color);
+// }
 
-<button onclick="console.log(this)">Click Me</button>
+// car();   // Car color: Red
+// bike();  // Bike color: Blue
 
-// 👉 When clicked, this = the button itself.
+// //👉 Both functions use color, but they don’t interfere with each other because each color is local.
 
-// 🛠️ Real Life Example:
-// If you press a switch, that switch (not all switches) turns on/off.
+// // 🔹 Parameters vs. Arguments in JavaScript
+// // ✅ Parameters
 
-// 5. Using call(), apply(), bind()
+// // Parameters are like placeholders (labels) in the function definition.
 
-// You can manually tell a function what this should be.
+// // They tell the function what kind of input it expects.
 
-function greet() {
-  console.log("Hello " + this.name);
-}
+// // Think of them as empty boxes waiting to be filled.
 
-const person = { name: "Alice" };
-greet.call(person); // Hello Alice
+// // ✅ Arguments
 
-// 🛠️ Real Life Example:
-// Like asking someone else to answer the phone for you — you decide who responds.
-</script>
+// // Arguments are the actual values you pass into the function when calling it.
+
+// // They are the real things that go inside the boxes (parameters).
+
+// function greet(name) {   // "name" is a parameter
+//   console.log("Hello " + name);
+// }
+
+// greet("Alice"); // "Alice" is an argument
+// greet("Bob");   // "Bob" is an argument
+
+// // 👉 Here:
+
+// // name → Parameter (placeholder in the function definition).
+
+// // "Alice" and "Bob" → Arguments (actual values passed when function is invoked).
+
+// // Example :- Pizza Order 🍕
+
+// // Parameter: “topping” (in the menu recipe).
+
+// // Argument: “Cheese” or “Pepperoni” (what customer actually orders).
+
+// function add(x, y) {  // x and y are parameters
+//   return x + y;
+// }
+
+// console.log(add(5, 10)); // 5 and 10 are arguments
+// console.log(add(20, 30)); // 20 and 30 are arguments
+
+// //🔹 JavaScript this in Functions
+// // 👉 Think of this as:
+// // “Who owns the function when it runs?”
+// // 1. Global Scope (this = window)
+// // When you use this outside any object or function → it points to the global object (window in browsers).
+
+// console.log(this); // Window
+
+// // Example:
+// // Like shouting in a marketplace — everyone can hear (global space).
+
+// //2. Inside a Function
+// //By default, functions also make this the global object.
+
+// function test() {
+//   console.log(this);
+// }
+// test(); // Window
+
+// // ⚠️ In strict mode, it’s undefined.
+
+// // 🛠️ Real Life Example:
+// // You ask a question without context → nobody knows who you’re talking to (undefined).
+
+// // 3. Inside an Object Method
+
+// // When a function is inside an object, this = the object itself.
+
+// const car = {
+//   brand: "Tesla",
+//   showBrand: function() {
+//     console.log(this.brand);
+//   }
+// };
+
+// car.showBrand(); // Tesla
+
+
+// // 🛠️ Real Life Example:
+// // If you say “my house” when you’re inside your house → “my” = the house you’re in.
+
+// // 4. Inside an Event Handler
+
+// // In events, this = the element that triggered the event.
+
+// <button onclick="console.log(this)">Click Me</button>
+
+// // 👉 When clicked, this = the button itself.
+
+// // 🛠️ Real Life Example:
+// // If you press a switch, that switch (not all switches) turns on/off.
+
+// // 5. Using call(), apply(), bind()
+
+// // You can manually tell a function what this should be.
+
+// function greet() {
+//   console.log("Hello " + this.name);
+// }
+
+// const person = { name: "Alice" };
+// greet.call(person); // Hello Alice
+
+// // 🛠️ Real Life Example:
+// // Like asking someone else to answer the phone for you — you decide who responds.
+// </script>
 </body>
 </html>

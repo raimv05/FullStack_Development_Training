@@ -15,12 +15,18 @@ Real-Life Example: Breaking a word into letters. -->
 <p id="demo"></p>
 
 <script>
-let word = ["Harsh", "eliana", "loraina", "lalu", "ory"];
+let word = {
+  name: "Hello",
+  length: 5
+};
+
 let letters = Array.from(word);
 
 document.getElementById("demo").innerHTML = letters;
+console.log(word);
 console.log(letters);
-console.log(typeof(letters))
+console.log(typeof(letters[0]));
+console.log(typeof(word[0]));
 </script>
 </body>
 </html>

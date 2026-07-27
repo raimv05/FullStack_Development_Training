@@ -11,14 +11,17 @@ Think of calling the 3rd student from a queue. -->
 <p id="demo"></p>
 
 <script>
-const fruits = ["Banana", "Orange", "Apple", "Mango"];
+// const fruits = ["Banana", "Orange", "Apple", "Mango"];
 
-// Get 3rd fruit
-let fruit = fruits.at(-1); // same as fruits[3]
+// // Get 3rd fruit
+// let fruit = fruits.at(-1); // same as fruits[3]
 
-document.getElementById("demo").innerHTML = 
-"The 3rd fruit in the basket is: " + fruit;
+// document.getElementById("demo").innerHTML = 
+// "The 3rd fruit in the basket is: " + fruit;
 
+ const students = ["Aditya" ,"Anmol" ,"Palak","Jyoti","Rakhi","Vipin","Anil","Aman","Drishti"];
+ let student = students.at(-2);
+ document.getElementById("demo").innerHTML=`Student name is : ${student}`
 </script>
 </body>
 </html>

@@ -1,0 +1,58 @@
+  body {
+            background-color: lightgray;
+        }   
+
+        h1 {
+            color: blue;
+            background-color: yellow;
+        }
+
+        h2 {
+            color: green;
+         }
+
+         h3 {
+            color: red;
+         }
+         h4 {
+            color: orange;
+         }
+         h5 {
+            color: purple;
+         }
+         h6 {
+            color: brown;
+         }
+
+         table {
+           border : 1px solid black;
+         }
+
+         td {
+            border : 1px solid black;
+         }
+
+         th {
+            border : 1px solid black;
+         }
+
+         img {
+            width: 200px;
+            height: 200px;
+         }
+
+         .normal {
+            color: black;
+         }
+         .highlight {
+            color: white;
+            background-color: blue;
+         }
+  .row {
+  display: flex;
+}
+
+.column {
+  flex: 33.33%;
+  padding: 5px;
+}

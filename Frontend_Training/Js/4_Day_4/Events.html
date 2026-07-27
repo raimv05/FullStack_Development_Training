@@ -8,8 +8,14 @@
     .box { padding: 10px; border: 1px solid #ccc; margin-bottom: 15px; }
     input, button, select { margin-top: 10px; padding: 5px; }
   </style>
+  <script>
+    function add(a, b) {
+      return a + b;
+    }
+    // returns 5
+  </script>
 </head>
-<body onload="alert('✅ Page loaded!')">
+<body onload="alert(add(2, 3));">
   <h1>🧠 Combined JavaScript DOM Events</h1>
 
   <div class="box">
@@ -32,17 +38,19 @@
     <p onmouseover="this.style.color='green'" onmouseout="this.style.color='blue'">
       Hover over this text
     </p>
+    <a href="https://www.w3schools.com/jsref/dom_obj_event.asp" onmouseover="this.style.color='red'" onmouseout="this.style.color='blue'">W3schools</a>
   </div>
 
   <div class="box">
-    <h3>5. onkeydown</h3>
-    <input type="text" onkeyup="console.log('Key pressed!')" placeholder="Press any key">
+    <h3>5. onkeydown/onkeyup</h3>
+    <input type="text" onkeydown="console.log('Key pressed!')" placeholder="Press any key">
+    <input type="text" onkeyup="console.log('Key released!')" placeholder="Release a key">
   </div>
 
   <div class="box">
     <h3>6. oninput</h3>
     <input type="text" oninput="document.getElementById('liveText').textContent = this.value" placeholder="Typing...">
-    <p>You typed: <span id="liveText"></span></p>
+    <p>You typed: <span id="liveText">Hello, World!</span></p>
   </div>
 
   <div class="box">
@@ -71,6 +79,7 @@
       <option value="">Choose a fruit</option>
       <option value="Apple">Apple</option>
       <option value="Banana">Banana</option>
+      
     </select>
   </div>
 
@@ -96,6 +105,10 @@
     <p oncontextmenu="alert('Right-click blocked!'); return false;">Right-click on this text</p>
   </div>
 
+  <div>
+    <button onclick="alert(add(2, 3))">Click Me</button>
+  </div>
+
   <script>
     window.onresize = () => console.log('Window resized!');
 
@@ -108,6 +121,59 @@
       alert("Form submitted!");
       return false;
     }
+
+    function add (a, b) {
+      return a + b;
+    }
+     
+    function Person(first, last, age, eye) {
+  this.firstName = first;
+  this.lastName = last;
+  this.age = age;
+  this.eyeColor = eye;
+}
+
+const father = new Person("John", "Doe", 50, "blue");
+const mother = new Person("Sally", "Rally", 48, "green");
+const daughter = new Person("Jane", "Doe", 20, "brown");
+const son = new Person("Mark", "Doe", 18, "blue");
+
+ // father object  = {
+  
+//   firstName: "John",
+//   lastName: "Doe",
+//   age: 50,
+//   eyeColor: "blue"
+//  }
+
+// mother object = {
+  
+//   firstName: "Sally",
+//   lastName: "Rally",
+//   age: 48,
+//   eyeColor: "green"
+//  }
+
+//  daughter object = {
+
+//     firstName: "Jane",
+//     lastName: "Doe",
+//     age: 20,
+//     eyeColor: "brown"
+//   }
+
+//  son object = {
+//  firstName: "Mark",
+//     lastName: "Doe",
+//     age: 18,
+//     eyeColor: "blue"
+//   }
+
+console.log(father.firstName,father.age,father.lastName); // John
+console.log(mother.age,mother.firstName,mother.lastName); // 48 Sally Rally
+console.log(daughter.firstName,daughter.age,daughter.lastName); // Jane 20 Doe
+console.log(son.firstName,son.age,son.lastName); // Mark 18 Doe
+
   </script>
 </body>
 </html>
