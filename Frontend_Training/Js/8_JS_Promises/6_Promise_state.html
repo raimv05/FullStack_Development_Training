@@ -39,30 +39,57 @@ Restaurant cancels → Promise is rejected ❌ -->
 <p id="demo"></p>
 
 <script>
+// This function shows the result on the webpage
 function myDisplayer(some) {
   document.getElementById("demo").innerHTML = some;
 }
 
-// Create a Promise
-let myPromise = new Promise(function ( myResolve,myReject) {
+// Create a promise
+// A promise has 3 possible states: pending, fulfilled, or rejected
+let myPromise = new Promise(function (myResolve, myReject) {
   let x = 0;
 
+  // If the condition is true, the promise is fulfilled
   if (x === 1) {
-    myResolve("Order Delivered ✅");  // success
+    myResolve("Order Delivered ✅");
   } else {
-    myReject("Order Failed ❌");  // failure
+    // If the condition is false, the promise is rejected
+    myReject("Order Failed ❌");
   }
-  //myPromise = Order Delivered ✅
-  console.log(myPromise)
+
+  // This shows the promise state in the console
+  console.log(myPromise);
 });
 
-
-// Use the Promise
+// Use the promise
+// .then() handles the success and failure cases
 myPromise.then(
-  function(value) { myDisplayer(value); },   // success case (1)
-  function(error) { myDisplayer(error); } , // error case (2)
-  console.log(myPromise)
+  function(value) {
+    myDisplayer(value); // runs when the promise is fulfilled
+  },
+  function(error) {
+    myDisplayer(error); // runs when the promise is rejected
+  }
 );
+</script>
+
+<h3>Pending State Example</h3>
+<p>This promise stays in <strong>Pending</strong> state for 3 seconds before resolving.</p>
+<p id="pendingDemo">Loading...</p>
+
+<script>
+// This promise will stay pending for 3 seconds
+// Then it will resolve and show a success message
+let pendingPromise = new Promise(function (resolve) {
+  setTimeout(function () {
+    resolve("Promise resolved after 3 seconds ✅");
+  }, 3000);
+});
+
+// When the promise is finished, update the page
+pendingPromise.then(function (value) {
+  document.getElementById("pendingDemo").innerHTML = value;
+});
 </script>
 </body>
 </html>
