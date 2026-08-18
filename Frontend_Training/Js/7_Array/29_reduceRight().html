@@ -14,7 +14,7 @@ Real-Life Example: Joining words in reverse order. -->
 const words = ["World", "My", "Hello"];
 let sentence = words.reduceRight((a, b) => a + " " + b);
 
-document.getElementById("demo").innerHTML = sentence;
+document.getElementById("demo").innerHTML = sentence + "<br>Original Words: " + words;
 </script>
 </body>
 </html>

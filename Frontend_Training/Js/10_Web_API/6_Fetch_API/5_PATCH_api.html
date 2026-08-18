@@ -1,0 +1,83 @@
+<!-- 🩹 What is PATCH Request?
+
+📌 PATCH → Updating only specific fields of existing data
+
+Unlike PUT, PATCH is generally used when we don't want to update the complete resource.
+
+Example:
+
+Suppose a user has: -->
+
+<!DOCTYPE html>
+<html>
+<body>
+
+  <h2>🩹 Fetch API - PATCH Request Example</h2>
+
+  <button onclick="updateUser()">Update Email</button>
+
+  <div id="result"></div>
+
+  <script>
+    function updateUser() {
+
+      const updatedData = {
+        email: "alex.new@example.com"
+      };
+
+      console.log("📤 Preparing to partially update data...");
+      console.log("📝 Data to send:", updatedData);
+      console.log("📦 Data Type:", typeof updatedData);
+
+      fetch("https://jsonplaceholder.typicode.com/posts/1", {
+        method: "PATCH",
+
+        headers: {
+          "Content-Type": "application/json"
+        },
+
+        body: JSON.stringify(updatedData)
+      })
+
+      .then(res => {
+
+        console.log("📥 Server responded with status:", res.status);
+
+        if (res.ok) {
+          console.log("✅ PATCH request was successful!");
+        } else {
+          console.log("⚠️ Something might be wrong!");
+        }
+
+        return res.json();
+      })
+
+      .then(data => {
+
+        console.log("📦 Converted JSON Response:", data);
+
+        document.getElementById("result").innerHTML = `
+          ✅ Data Partially Updated! <br><br>
+
+          <strong>Server Response:</strong><br>
+          ID: ${data.id}<br>
+          Email: ${data.email}
+        `;
+      })
+
+      .catch(err => {
+
+        console.error("❌ Error occurred:", err);
+
+      })
+
+      .finally(() => {
+
+        console.log("✅✅ PATCH request process completed.");
+
+      });
+    }
+  </script>
+
+</body>
+</html>

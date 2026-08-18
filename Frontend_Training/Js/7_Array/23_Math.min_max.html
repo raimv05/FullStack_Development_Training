@@ -5,19 +5,22 @@
 Using Math.min & Math.max: -->
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
 <body>
-<h2>Find Min & Max Example</h2>
-<p id="demo"></p>
+    
+    <p id="demo">Hi</p>
 
-<script>
-const numbers = [40, 100, 1, 5, 25, 10];
-
-const minVal = Math.min.apply(null, numbers);
-const maxVal = Math.max.apply(null, numbers);
-
-document.getElementById("demo").innerHTML =
-"Min: " + minVal + "<br>Max: " + maxVal;
-</script>
+    <script>
+        const num = [40,100,50,70,1,3,5,25,10];
+        const x = Math.min.apply(null,num);
+        const y = Math.max.apply(null,num);
+        console.log(x,y);
+        document.getElementById("demo").innerHTML = `Min: ${x} & Max: ${y}`;
+    </script>
 </body>
 </html>

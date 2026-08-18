@@ -23,13 +23,14 @@ for...of → You take out the items (values) -->
       age: 22,
       city: "Chandigarh"
     };
-
+console.log(typeof info);
     let text = "";
     for (let key in info) {
       text += key + ": " +  info[key] + "<br>";
     }
-
+ 
     document.getElementById("demo1").innerHTML = text;
+    console.log(typeof text);
   </script>
 </body>
 </html>

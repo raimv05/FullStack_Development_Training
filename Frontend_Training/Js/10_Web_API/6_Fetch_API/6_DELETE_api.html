@@ -1,0 +1,71 @@
+<!-- 🗑️ What is DELETE Request?
+
+📌 DELETE → Removing data from the server
+
+DELETE is used when we want to remove an existing resource.
+
+Examples:
+Delete a user
+Delete a product
+Delete a comment
+Remove an item from a database
+✅ Practical DELETE Example -->
+
+<!DOCTYPE html>
+<html>
+<body>
+
+  <h2>🗑️ Fetch API - DELETE Request Example</h2>
+
+  <button onclick="deleteUser()">Delete Data from Server</button>
+
+  <div id="result"></div>
+
+  <script>
+    function deleteUser() {
+
+      console.log("📤 Preparing to delete data...");
+
+      fetch("https://jsonplaceholder.typicode.com/posts/1", {
+        method: "DELETE"
+      })
+
+      .then(res => {
+
+        console.log("📥 Server responded with status:", res.status);
+
+        if (res.ok) {
+          console.log("✅ Delete request was successful!");
+
+          document.getElementById("result").innerHTML = `
+            🗑️ Data Deleted Successfully!
+          `;
+        } else {
+          console.log("⚠️ Something might be wrong!");
+        }
+
+        return res.text();
+      })
+
+      .then(data => {
+
+        console.log("📦 Server Response:", data);
+
+      })
+
+      .catch(err => {
+
+        console.error("❌ Error occurred while deleting:", err);
+
+      })
+
+      .finally(() => {
+
+        console.log("✅✅ DELETE request process completed.");
+
+      });
+    }
+  </script>
+
+</body>
+</html>

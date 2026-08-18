@@ -38,7 +38,7 @@ Restaurant cancels → Promise is rejected ❌ -->
 <h2>JavaScript Promises</h2>
 <p id="demo"></p>
 
-<script>
+<!-- <script>
 // This function shows the result on the webpage
 function myDisplayer(some) {
   document.getElementById("demo").innerHTML = some;
@@ -47,10 +47,10 @@ function myDisplayer(some) {
 // Create a promise
 // A promise has 3 possible states: pending, fulfilled, or rejected
 let myPromise = new Promise(function (myResolve, myReject) {
-  let x = 0;
+  let x = 1;
 
   // If the condition is true, the promise is fulfilled
-  if (x === 1) {
+  if (x === 0) {
     myResolve("Order Delivered ✅");
   } else {
     // If the condition is false, the promise is rejected
@@ -58,8 +58,9 @@ let myPromise = new Promise(function (myResolve, myReject) {
   }
 
   // This shows the promise state in the console
-  console.log(myPromise);
+  
 });
+console.log(myPromise);
 
 // Use the promise
 // .then() handles the success and failure cases
@@ -71,7 +72,7 @@ myPromise.then(
     myDisplayer(error); // runs when the promise is rejected
   }
 );
-</script>
+</script> -->
 
 <h3>Pending State Example</h3>
 <p>This promise stays in <strong>Pending</strong> state for 3 seconds before resolving.</p>
@@ -90,9 +91,10 @@ let pendingPromise = new Promise(function (resolve) {
 pendingPromise.then(function (value) {
   document.getElementById("pendingDemo").innerHTML = value;
 });
+console.log(pendingPromise); // Shows the promise state in the console
 </script>
 </body>
-</html>
+</html> 
 
 <!-- 👉 Here, the Promise checks a condition (x == 0).
 

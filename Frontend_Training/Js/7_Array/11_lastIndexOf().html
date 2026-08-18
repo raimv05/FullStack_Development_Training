@@ -20,8 +20,9 @@ Real-Life Example
 <p id="demo"></p>
 
 <script>
-const fruits = ["Kiwi", "Apple", "Orange", "Apple", "Mango"];
-let position = fruits.lastIndexOf("Apple", 2);  // last "Apple" at index 2
+const fruits = ["Apple","Kiwi", "Apple", "Orange", "Apple", "Mango"];
+
+let position = fruits.lastIndexOf("Apple",5);  // last "Apple" at index 1
 
 document.getElementById("demo").innerHTML =
 "Last 'Apple' found at position: " + position;

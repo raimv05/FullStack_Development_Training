@@ -10,10 +10,12 @@ Last passenger leaves the bus. -->
 
 <script>
 
-const fruits = ["Banana", "Orange", "Apple", "Mango"];
+const fruits = ["Banana", "Orange", "Apple"];
 
 // Remove last fruit
 let fruit = fruits.pop();
+console.log(typeof fruit);
+console.log(typeof fruits);
 
 document.getElementById("demo").innerHTML = 
 "Removed fruit: " + fruit + "<br>Remaining fruits: " + fruits;

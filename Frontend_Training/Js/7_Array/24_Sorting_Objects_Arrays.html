@@ -19,13 +19,17 @@ const cars = [
 
 // Sort by Year
 cars.sort((a, b) => a.year - b.year);
+const sortedByType = cars.sort((a,b) => a.type.localeCompare(b.type)); // Sort by Type
 
 document.getElementById("demo").innerHTML =
 "Cars Sorted by Year: " + cars.map(c => c.type + " " + c.year).join(", ");
-console.log(typeof(cars))
+console.log(typeof(cars));
+console.log(sortedByType);
 </script>
 </body>
 </html>
+
+
 
 <!-- ✅ Summary in Real Life Terms
 

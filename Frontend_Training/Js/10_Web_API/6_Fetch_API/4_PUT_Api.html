@@ -1,0 +1,91 @@
+<!-- 🔄 What is PUT Request?
+
+📌 PUT → Updating existing data on the server
+
+PUT is generally used when we want to update/replace an existing resource.
+
+Examples:
+Updating a user's profile
+Updating product information
+Changing an employee's details
+Updating a student's complete record
+✅ Practical PUT Example
+
+We will update a fake user/post using JSONPlaceholder. -->
+
+<!DOCTYPE html>
+<html>
+<body>
+
+  <h2>🔄 Fetch API - PUT Request Example</h2>
+
+  <button onclick="updateUser()">Update Data on Server</button>
+
+  <div id="result"></div>
+
+  <script>
+    function updateUser() {
+
+      const updatedData = {
+        id: 1,
+        name: "Alex Updated",
+        email: "alex.updated@example.com"
+      };
+
+      console.log("📤 Preparing to update data...");
+      console.log("📝 Data to send:", updatedData);
+      console.log("📦 Data Type:", typeof updatedData);
+
+      fetch("https://jsonplaceholder.typicode.com/posts/1", {
+        method: "PUT",
+
+        headers: {
+          "Content-Type": "application/json"
+        },
+
+        body: JSON.stringify(updatedData)
+      })
+
+      .then(res => {
+
+        console.log("📥 Server responded with status:", res.status);
+
+        if (res.ok) {
+          console.log("✅ Update request was successful!");
+        } else {
+          console.log("⚠️ Something might be wrong!");
+        }
+
+        return res.json();
+      })
+
+      .then(data => {
+
+        console.log("📦 Converted JSON Response:", data);
+
+        document.getElementById("result").innerHTML = `
+          ✅ Data Updated Successfully! <br><br>
+
+          <strong>Server Response:</strong><br>
+          ID: ${data.id}<br>
+          Name: ${data.name}<br>
+          Email: ${data.email}
+        `;
+      })
+
+      .catch(err => {
+
+        console.error("❌ Error occurred:", err);
+
+      })
+
+      .finally(() => {
+
+        console.log("✅✅ PUT request process completed.");
+
+      });
+    }
+  </script>
+
+</body>
+</html>

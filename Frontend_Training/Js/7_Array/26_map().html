@@ -22,7 +22,8 @@ Real-Life Example: Doubling the marks of students for extra credit. -->
 
 <script>
 const marks = [50, 60, 70];
-const bonusMarks = marks.map(m => m + 10);
+const num = [10,20,30];
+const bonusMarks = marks.map((a,b) => a + num[b]);
 console.log(marks);
 console.log(bonusMarks);
 document.getElementById("demo").innerHTML =
